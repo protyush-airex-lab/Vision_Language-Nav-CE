@@ -14,7 +14,7 @@ Vision and Language Navigation in Continuous Environments (VLN-CE) is an instruc
 
 ## Setup
 
-This project is developed with Python 3.6. If you are using [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [anaconda](https://anaconda.org/), you can create an environment:
+This project is developed with Python 3.6. One can create an environment:
 
 ```bash
 conda create -n vlnce python=3.6
@@ -39,7 +39,7 @@ python -m pip install -r habitat_baselines/rl/ddppo/requirements.txt
 python setup.py develop --all
 ```
 
-Now you can install VLN-CE:
+Original code for VLN-CE:
 
 ```bash
 git clone git@github.com:jacobkrantz/VLN-CE.git
@@ -58,7 +58,7 @@ Matterport3D (MP3D) scene reconstructions are used. The official Matterport3D do
 python download_mp.py --task habitat -o data/scene_datasets/mp3d/
 ```
 
-Extract such that it has the form `data/scene_datasets/mp3d/{scene}/{scene}.glb`. There should be 90 scenes.
+Extracted such that it has the form `data/scene_datasets/mp3d/{scene}/{scene}.glb`. There are 90 scenes.
 
 #### Episodes: Room-to-Room (R2R)
 
@@ -117,6 +117,29 @@ The `DaggerTrainer` class is the standard trainer and supports teacher forcing o
 The `RecollectTrainer` class performs teacher forcing using the ground truth trajectories provided in the dataset rather than a shortest path expert. Also, this trainer does not save episodes to disk, instead opting to recollect them in simulation.
 
 Both trainers inherit from `BaseVLNCETrainer`.
+
+### Models 
+#### Model-1
+
+Following is the architecture for seq2seq baseline model:
+
+<p align ="center">
+  <img src="./images/seq2seq.png" alt="Seq2Seq Architecture" width="600">
+</p>
+
+#### Model-1
+
+Following is the architecture for seq2seq baseline model:
+
+<p align ="center">
+  <img src="./images/MLA.png" alt="Seq2Seq Architecture" width="600">
+</p>
+
+
+
+
+
+
 
 ### Evaluating Agents
 
